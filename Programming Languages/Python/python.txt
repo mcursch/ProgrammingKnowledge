@@ -1,0 +1,34 @@
+Helpful Python methods
+
+[string].isalnum() 
+	- returns if a string is alphanumeric
+
+[char].join(arr)
+	- returns a string, consisting of all elements in arr, joined by char
+
+[string].split()
+	- splitting with nothing will choose spaces
+	- can input an optional character
+	- turns it into an array, sort of the reverse of join
+
+[string].lstrip()
+	- removes leading spaces from a string
+
+[string].replace(s1,s2)
+	- replaces all occurences of s1 in string with s2
+
+del lis[range]
+	- removes all elements of a list within a given range
+
+[list].remove(element)
+	- removes the first occurrence of element in list
+
+[string][::-1] or reversed(string) will reverse a string
+
+arr[-1] returns the last elements in a list [-2] returns second to last, etc
+
+capitalize() to cap first letter of string
+
+lower() converts string to lowercase
+
+insert(i,x), append(x), extend([x,y,z]) to add elements to python array

@@ -1,0 +1,127 @@
+Python Interview Questions
+
+1. Shallow Copy vs Deep Copy
+	- Both create new objects, but a shallow copy keeps references of internal objects
+		- this means if you have an obj with a val property, changing copy.val will also change original.val
+	- A deep copy creates a new object, and recursively copies (creating new) the objects in the original
+		- thismeans changes to the copy will not affect the original
+
+2. Can Python multithread
+	- you can use a threading module o run multiple threads concurrently, however, they do not run in true parallelism
+
+3. Django Architecture
+	- Templates: front end
+	- Model: back end where data is stored
+	- View: Interacts with model and template and maps it to the URL ( seems like a controller in Laravel)
+
+4. NumPy arrays are faster than nested lists
+
+5. What is pickling/unpickling?
+	- serializing and unserializing data (respectively)
+
+6. How is memory managed in python
+	- Python has private heap space that stores objects, the user cannot access this space
+	- Python also has built in garbage collection
+
+7. Python passes arguments by reference
+	- Python is also scoped, so consider this code
+	def fun(l):
+		l = [3,2,1]
+	l = [1,2,3]
+	fun(l)
+	print(l)	# would print [1,2,3] because we created a new object inside the function
+
+	however,
+	def fun(l):
+		l[0] = '2'
+	l = [1,2,3]
+	fun(l)
+	print(l)	# would print [2,2,3] because lists are mutable
+
+8. Generate random numbers with a random module or numpy
+
+9. '//' operator returns quotient as integer, and '/' returns value as a float
+
+10. What does the 'is' operator do?
+	- checks if two variables refer to the same object in memory
+	- compares identities, not values
+
+11. What does pass keyword do
+	- used for syntactic requirements. basically, if you have an if, and if the if is true, you would do nothing, place a pass there
+
+
+12. How to check if all chars in a string are alphanumeric
+	- use isalnum() method
+
+13. You can join elemenets in a sequence with .join()
+	ex: words = ['Hello', 'World'] -> x = ' '.join(words) => prints 'Hello World'
+
+18. Append vs Extend
+	- append adds an el to end of list
+	- extend adds elements from iterable to end of list
+	- l1 = [1,2,3] --> l1.extend([4,5,6]) --> l1 = [1,2,3,4,5,6]
+
+19. List vs Tuple
+	- Lists are mutable, can be changed after creation
+	- tuples cannot, hence why they are hashable, and lists are not
+
+20. Main function is not strictly required
+	implemented like so:
+	def main():
+		print('hello world')
+	if __name__ == "__main__":
+		main()
+
+21. print("hello", end="") will print without a newline
+
+22. Python is a mix of OOP and functional programming
+
+23. Python functions are first class objects
+	- they can be assigned to variables, passed to other functions, return functions from functions, store in DS, etc.
+
+24. what does print(__name__) print
+	- either main or the module the object came from
+
+25. How is python an interpreted language
+	- it is not in machine level code before runtime 
+
+
+26. What is a decorator
+	- decorators change the appearance of a function without changing its structure
+
+27. how to use slicing
+	[start:stop:step]
+	start is index where slice begins(inclusive)
+	stop is index where slice ends(exclusive)
+	step defines how many elements to skip
+
+28. Global vs Local Variables
+	- local variable is any variable declared in a function. they only exist within this local space
+	- globals are declared outside of functions, and any function can access global variables
+
+
+29. for loop iterates over a sequence, while loop iterates while a condition is true
+
+30. self (similar to this) represents class instance
+
+31. Literals: string, numeric, character, boolean, and collections (list, tuple, set, dictionary)
+
+32. __init__ is python constructor
+
+33. Continue vs Break vs Pass
+	- continue: move to begining of loop (end here, go to next iteration)
+	- break: terminate loop
+	- pass: null operation, do nothing
+
+34. Generators
+	- special type of function that returns an iterator to go through a sequence lazily, one value at a time
+
+35. copy.copy() creates a shallow object copy, copy.deepcopy() creates a deep object copy
+	- this means copying a 2d list will copy the values (shallow), but if any of the nested lists are changed, both will be changed
+
+36. Inheritance allows a python class to gain another class's members
+	- can inherit from multiple classes or levels, as opposed to java which does not allow this
+
+37. Polymorphism is ablity of child classes to implement parents methods (same object, different form)
+
+38. Abstract classes provide only necessary details while hiding implementation

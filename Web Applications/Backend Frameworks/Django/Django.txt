@@ -1,0 +1,21 @@
+Django Tutorial
+
+Django and Flask are popular web dev frameworks for python
+
+batteries included framework
+	- comes with a lot of features
+		- admin interface
+		- ORM (object-relational mapper)
+		- authentication
+		- caching
+
+when you make a request to a server, it can do one of two things:
+	- generate the HTML for you and send it back using HTTP
+	- generate the data for that page and have you generate the HTML yourself ( now the industry Best practice)
+		- makes applications more scalable
+		- react, angular, and vue used to generate the front end
+		- Server side: django, express, .net core
+		- server side provides endpoints to generate certain data, known as API's
+			- API represents ways we can interact with the server
+
+
