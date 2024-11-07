@@ -1,0 +1,55 @@
+DRUPAL Questions
+
+What is Drupal	
+	- open source cms
+
+
+Drupal Advantages
+	- flexible, 
+	- open source so large community
+	- large library of modules
+
+What are Drupal Nodes
+	- Think of them as the pieces of content on a website, where each has an id, title, and content type
+
+Drupal Hook System
+	- Allows modules to interact with and modify Drupal Core functionality without altering the core code
+
+How does drupals caching system work
+	- improves performance by storing requently accessed data
+	- drupal has different types of caches(dynamic cache  )
+
+Optimize Drupal Site Performance
+	- caching
+	- lazy loading
+
+Migrating data: use migrate API
+
+Drupal Distributions
+	- prepackaged drupal cores that come wth a set of modules
+
+Module vs Theme: 
+	- Module Extends functionality, theme changes appearence
+
+Sites Directory
+	- allows you to host multiple sites froma single codebase
+
+Create a new content type:
+	- structure -> content types -> create new type -> add fields, etc
+
+Blocks vs Views
+	- blocks are mainly used for basic content, Views are for dynamic
+
+Custom CSS 
+	- edit yml fiels
+
+
+
+Drupal Structure
+	- entire page has a theme, page has regions, where nodes can be placed. nodes can be blocks, views, etc, any content
+
+Render Array
+	- representation of the layout
+
+API endpoints
+	- utilize controllers 

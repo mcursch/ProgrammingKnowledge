@@ -1,0 +1,143 @@
+Regular Expressions
+
+website to practice regex: 
+https://regexr.com/ 
+https://regex101.com/
+
+
+Reg expressions give us a way to search through text in an advanced way
+
+Format
+starts with '/' (no quotes) and ends with a '/'
+can also have flags after the end 
+ex: '/xx/g' will match all examples of xx in the sting
+'/xx/' will only match the first
+
+Tokens
+ +
+ means match one or more of he preceding char
+ 	ex: e+ matches e, ee, eee, etc
+
+ ?
+ means the preceding char is optional
+
+ *
+ combination of + and ?
+ optional, but can match more than one
+ ex: re* matches r, re, reee
+
+ .
+ matches the following characters, and acts as any character (except newline)
+ ex: .at matches fat, cat, eat
+
+ \
+ cancles anything that comes after it ( acts as an escape char)
+ ex: \. matches periods
+
+ \w
+ match any character
+
+ \s
+ match any white space
+
+ \W
+ matches anything that isnt a word
+
+ \S
+ matches anything that isnt a space
+
+ {n,m}
+ gives anything that matches between certain length
+
+
+ ex: 
+ \w{4,} matches any words with length 4+
+ \w{4} matches any words with length 4
+ \w{4,5} matches any words with length 4-5
+
+ note that this can include larger words
+ ex: searching would be split into searc and hing and identified
+
+
+
+
+[x]
+matches anything in the bracket
+[cf]at matches cat and fat
+
+can also do ranges
+ex: [0-9], [a-z], [a-zA-Z]
+
+()
+puts things in a group
+(t|T) matches t and uppercase T
+
+can pair with others
+(t|e|r) {2,3} will match 2-3 of trhose chars 
+ex: street would match once with tre and once with et
+
+^
+match the beginning of the line
+
+
+$ 
+match the end of the statement
+
+
+<=
+positive look behind
+ex: (?<=[tT]he). means match anything that is preceded by the (or The)
+
+<!
+negative look behind
+match anything that doesnt have the following text behind it
+ex: (?<![tT]he). matches everything except for the spaces immediately after the or The
+
+=
+positive look ahead
+match anything that has the following text ahead of it
+ex: .(?=at) matches anything that has at after it (fat, cat)
+
+!
+negative look ahead
+match anything that does not have the following text ahead of it
+ex: .(?!at) matches anything that does not have at after it 
+
+\d
+matches digit 
+
+
+
+Examples
+phone number
+1234567890
+matched by /\d{10}/
+
+another way 
+123-456-7890
+matched by /\d{3}-?\d{3}-?\d{4}/
+
+another way 123 456 7890
+matched by /\d{3}[ -]?\d{3}[ -]?\d{4}/
+
+group matching
+what if we want to select only the digits
+/(\d{3})[ -]?(\d{3})[ -]?(\d{4})/
+
+matches these and puts them into groups
+ex: $1$2$3 puts the three groups after another
+
+groups can be named
+/(?<areacode>\d{3})[ -]?(\d{3})[ -]?(\d{4})/
+now first three are accessed by $areacode
+
+another example (123) 4656-7890
+/\?(?<areacode>\d{3})\?[ -]?(\d{3})[ -]?(\d{4})/
+add the \?( and \?? for optional parens 
+
+what about +1 123 456 7890
+/(\+1[ -])?\?(?<areacode>\d{3})\?[ -]?(\d{3})[ -]?(\d{4})/
+
+in order to not cap the space after the 1, use a non capturing group ?: inside of the group
+now, the new +1 group will appear, but the '+1 ' group will not be captured
+/(?:(\+1)[ -])?\?(?<areacode>\d{3})\?[ -]?(\d{3})[ -]?(\d{4})/
